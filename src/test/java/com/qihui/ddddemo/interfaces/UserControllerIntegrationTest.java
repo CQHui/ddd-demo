@@ -58,12 +58,12 @@ class UserControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].id").exists());
 
-//        // 5. 删除用户
-//        mockMvc.perform(delete("/api/users/" + userId))
-//                .andExpect(status().isOk());
-//
-//        // 6. 查询已删除用户
-//        mockMvc.perform(get("/api/users/" + userId))
-//                .andExpect(status().is4xxClientError());
+        // 5. 删除用户
+        mockMvc.perform(delete("/api/users/" + userId))
+                .andExpect(status().isOk());
+
+        // 6. 查询已删除用户
+        mockMvc.perform(get("/api/users/" + userId))
+                .andExpect(status().is4xxClientError());
     }
 } 
